@@ -4,8 +4,8 @@ SELECT
 	pc.Name AS CategoriaProducto,
 	SUM(sod.OrderQty) AS UnidadesVendidas,
 	CAST(SUM(sod.LineTotal) AS DECIMAL (10,2)) AS VentasTotales,
-	YEAR(so.OrderDate) AS Año_orden,
-	MONTH(so.OrderDate) AS Mes_orden
+	YEAR(so.OrderDate) AS Año,
+	MONTH(so.OrderDate) AS Mes
 FROM Sales.SalesOrderDetail sod
 JOIN Production.Product p
 ON sod.ProductID = p.ProductID
