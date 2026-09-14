@@ -17,4 +17,4 @@ JOIN Production.ProductCategory pc
 ON psc.ProductCategoryID = pc.ProductCategoryID
 WHERE so.status = 5
 GROUP BY sod.ProductID, p.Name, pc.Name, YEAR(so.OrderDate), MONTH(so.OrderDate)
-ORDER BY YEAR(so.OrderDate), MONTH(so.OrderDate)
+ORDER BY YEAR(so.OrderDate), MONTH(so.OrderDate),VentasTotales DESC;
