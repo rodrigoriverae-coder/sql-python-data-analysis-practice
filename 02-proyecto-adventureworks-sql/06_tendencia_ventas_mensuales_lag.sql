@@ -1,17 +1,32 @@
 WITH info_ventas AS(	
-	SELECT
-		YEAR(OrderDate) AS Año,
-		MONTH(OrderDate) AS Mes,
-		CAST(SUM(TotalDue) AS DECIMAL (10,2)) AS VentasActuales
-	FROM Sales.SalesOrderHeader
-	WHERE status = 5
-	GROUP BY YEAR(OrderDate), MONTH(OrderDate)
+    SELECT
+        YEAR(OrderDate) AS Año,
+        MONTH(OrderDate) AS Mes,
+        CAST(SUM(TotalDue) AS DECIMAL(10,2)) AS VentasActuales
+    FROM Sales.SalesOrderHeader
+    WHERE Status = 5
+    GROUP BY
+        YEAR(OrderDate),
+        MONTH(OrderDate)
+),
+ventas_con_lag AS (
+    SELECT
+        Año,
+        Mes,
+        VentasActuales,
+        LAG(VentasActuales) OVER (ORDER BY Año, Mes) AS VentasMesAnterior
+    FROM info_ventas
 )
 SELECT
-	Año,
-	Mes,
-	VentasActuales,
-	LAG(VentasActuales) OVER (ORDER BY Año, Mes) AS VentasMesAnterior,
-	(VentasActuales - LAG(VentasActuales) OVER (ORDER BY Año, Mes)) AS Diferencia
-FROM info_ventas
-ORDER BY Año, Mes
+    Año,
+    Mes,
+    VentasActuales,
+    VentasMesAnterior,
+    VentasActuales - VentasMesAnterior AS Diferencia,
+    CAST(
+        (VentasActuales - VentasMesAnterior) * 100.0
+        / NULLIF(VentasMesAnterior, 0)
+        AS DECIMAL(10,2)
+    ) AS VariacionPorcentual
+FROM ventas_con_lag
+ORDER BY Año, Mes;
