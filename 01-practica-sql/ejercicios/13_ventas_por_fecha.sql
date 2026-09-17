@@ -15,8 +15,7 @@ SELECT
     END AS dia_semana
 FROM ventas;
 
--- Esto sirve para agrupar todas las ventas de diferentes días POR MES
-
+-- DATE_TRUNC permite agrupar las ventas de diferentes días por mes.
 
 SELECT 
     DATE_TRUNC('month', v.fecha) AS mes_reporte,

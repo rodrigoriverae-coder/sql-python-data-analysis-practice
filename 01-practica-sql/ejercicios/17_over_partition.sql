@@ -4,7 +4,7 @@ SELECT
     (cantidad * 100.0 / SUM(cantidad) OVER(PARTITION BY distrito_tienda)) AS porcentaje_del_distrito
 FROM ventas;
 
--- La consulta se hace dentro del select 
+-- SUM() OVER() permite calcular el total del distrito sin agrupar las filas.
 
 SELECT 
     v.distrito_tienda,

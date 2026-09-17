@@ -2,14 +2,18 @@ SELECT
     distrito_tienda, 
     total_vendido
 FROM (
-    -- Esta es la "tabla temporal" que creamos al vuelo
+    -- Subconsulta en FROM: crea una tabla derivada para la consulta externa
     SELECT distrito_tienda, SUM(cantidad) AS total_vendido
     FROM ventas
     GROUP BY distrito_tienda
 ) AS mi_tabla_resumen -- En Postgres, es obligatorio ponerle un nombre (alias)
 WHERE total_vendido > 5;
 
---También se coloca dentro del from los join
+-- La subconsulta puede utilizar JOIN para obtener los datos necesarios
+-- antes de generar el resultado que utilizará la consulta externa.
+
+-- Clasificar las ventas y luego contar las operaciones por categoría
+
 SELECT 
     resumen.tipo_de_venta, 
     COUNT(*) AS total_operaciones
