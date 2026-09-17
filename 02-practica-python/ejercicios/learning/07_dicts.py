@@ -52,7 +52,7 @@ print((my_new_dict))
 my_new_dict = dict.fromkeys((my_dict))
 print((my_new_dict))
 
-my_new_dict = dict.fromkeys(my_dict, ('MoureDev')) # Si hacemos esto, estaríamos agregando valores a las keys
+my_new_dict = dict.fromkeys(my_dict, 'MoureDev') # Asigna el mismo valor a todas las claves.
 print((my_new_dict))
 
 my_values = my_new_dict.values()

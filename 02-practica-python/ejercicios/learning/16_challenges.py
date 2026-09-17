@@ -13,14 +13,14 @@ cada impresión), sustituyendo los siguientes:
 
 def multiplo():
     for index in range(1, 101):
-        if  index % 3 ==0 and index % 5 == 0:
-            print(index, 'FizzBuzz')
-        elif index %  3 ==0:
-            print(index, 'Fizz')
-        elif index % 5 ==0:
-            print(index, 'Buzz')
+        if index % 3 == 0 and index % 5 == 0:
+            print('FizzBuzz')
+        elif index % 3 == 0:
+            print('Fizz')
+        elif index % 5 == 0:
+            print('Buzz')
         else:
-            print(index, 'No es multiplo de 3 ni de 5')
+            print(index)
 
 multiplo()
 

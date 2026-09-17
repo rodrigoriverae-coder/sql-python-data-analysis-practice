@@ -41,6 +41,9 @@ print(current_date.year)
 print(current_date.month)
 print(current_date.day)
 
+# Este ejemplo permite modificar el mes manualmente, pero puede fallar
+# si el mes resultante no existe, por ejemplo al sumar 1 a diciembre.
+
 current_date = date(current_date.year, current_date.month + 1, current_date.day)
 
 print(current_date.month)

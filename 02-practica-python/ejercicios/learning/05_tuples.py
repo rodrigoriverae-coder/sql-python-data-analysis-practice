@@ -1,7 +1,7 @@
 ### Tuples ###
 
 my_tuple = tuple() 
-my_other_tuple = () # A diferencia de la lista, no especificamos la palabra lits y ya se considera una tupla
+my_other_tuple = () # También podemos crear una tupla vacía utilizando paréntesis.
 
 my_tuple = (35, 1.77, 'Brais', 'Moure', 'Brais')
 print(my_tuple)
