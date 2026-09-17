@@ -1,7 +1,6 @@
 # Esto es un comentario:
 # #Nuestro Hola Mundo en Pyhton
 print('Hola Python')
-print('Hola Python')
 
 """
 Este es 
