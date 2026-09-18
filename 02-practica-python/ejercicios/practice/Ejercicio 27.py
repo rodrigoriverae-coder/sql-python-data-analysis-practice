@@ -7,7 +7,7 @@ Una contraseña segura tiene:
 '''
 print('"Validación de contraseña"')
 
-# Ejercicio 19
+# Ejercicio 27
 
 contraseña = input('Ingrese su nueva contraseña: ')
 con_numeros = False

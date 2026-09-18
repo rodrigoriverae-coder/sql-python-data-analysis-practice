@@ -11,7 +11,8 @@ datos_finales = {
 }
 df = pd.DataFrame(datos_finales)
 
-df['Producto']= df['Producto'].str.strip().drop_duplicates()
+df['Producto'] = df['Producto'].str.strip()
+df = df.drop_duplicates()
 df['Venta_USD'] = df['Venta_USD'].fillna(300)
 df['Fecha'] = pd.to_datetime(df['Fecha'])
 df['Mes'] = df['Fecha'].dt.month_name()

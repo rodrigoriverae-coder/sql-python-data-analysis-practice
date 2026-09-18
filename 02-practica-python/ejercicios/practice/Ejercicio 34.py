@@ -1,4 +1,4 @@
-# Programa que devuelva el primer caracter en minuscula y el resto normal:
+# # Convertir el primer carácter en mayúscula:
 
 palabra = input('Ingrese la palabra: ')
 

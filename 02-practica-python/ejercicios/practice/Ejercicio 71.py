@@ -10,7 +10,8 @@ df_ventas = pd.DataFrame(datos_ventas)
 
 df_ventas = df_ventas.drop_duplicates(subset = ['Factura'])
 df_ventas['Estado'] = df_ventas['Estado'].str.strip().str.capitalize()
-df_ventas['Monto_USD'] = df_ventas['Monto_USD'].str.replace('$','')
+df_ventas['Monto_USD'] = df_ventas['Monto_USD'].str.replace('$', '', regex=False)
+df_ventas['Monto_USD'] = pd.to_numeric(df_ventas['Monto_USD'])
 df_ventas['Monto_USD'] = df_ventas['Monto_USD'].fillna(0)
 
 

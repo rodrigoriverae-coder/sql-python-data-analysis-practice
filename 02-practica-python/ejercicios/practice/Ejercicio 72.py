@@ -8,8 +8,10 @@ datos_gym = {
 }
 df_gym = pd.DataFrame(datos_gym)
 
+df_gym['Plan'] = df_gym['Plan'].str.strip()
 df_gym['Plan'] = df_gym['Plan'].str.upper()
 df_gym['Pago'] = df_gym['Pago'].str.replace('S/.','',regex=False)
+df_gym['Pago'] = pd.to_numeric(df_gym['Pago'])
 df_gym['Pago'] = df_gym['Pago'].fillna(0)
 df_gym = df_gym.drop_duplicates(subset = ['ID_Socio'])
 
