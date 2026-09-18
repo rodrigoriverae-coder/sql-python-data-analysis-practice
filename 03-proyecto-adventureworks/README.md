@@ -45,7 +45,7 @@ Se utilizó Python con Pandas para:
 - Revisar y preparar los datos.
 - Realizar agrupaciones y cálculos.
 - Calcular indicadores de ventas, órdenes y ticket promedio.
-- Analizar los resultados obtenidos mediante SQL.
+- Analizar ventas, canales y productos.
 
 ### 3. Power BI
 
@@ -68,7 +68,7 @@ Entre enero–mayo de 2024 y el mismo periodo de 2025:
 
 - **Ventas:** Aumentaron 45.7%
 - **Órdenes:** Aumentaron 428.3%
-- **Ticket promedio:** Disminuyeron 72.4%
+- **Ticket promedio:** Disminuyó 72.4%
 
 Las ventas aumentaron 45.7%, mientras que el número de órdenes creció 428.3%. Al mismo tiempo, el ticket promedio disminuyó 72.4%.
 
@@ -76,9 +76,9 @@ Las ventas aumentaron 45.7%, mientras que el número de órdenes creció 428.3%.
 
 Entre enero–mayo de 2024 y enero–mayo de 2025:
 
-- **Órdenes online:** Aumentaron 563.2%
+- **Órdenes online:** Aumentaron 563.4%
 - **Órdenes no online:** Aumentaron 23.3%
-- **Ventas online:** Aumentaron 210.7%
+- **Ventas online:** Aumentaron 210.6%
 - **Ventas no online:** Aumentaron 6.5%
 
 El canal online presentó el mayor crecimiento tanto en número de órdenes como en ventas durante el periodo analizado.
