@@ -1,6 +1,6 @@
 SELECT
 	sod.ProductID,
-	p.Name,
+	p.Name AS NombreProducto,
 	pc.Name AS CategoriaProducto,
 	SUM(sod.OrderQty) AS UnidadesVendidas,
 	CAST(SUM(sod.LineTotal) AS DECIMAL (10,2)) AS VentasTotales,

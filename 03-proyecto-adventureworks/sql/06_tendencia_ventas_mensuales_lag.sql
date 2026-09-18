@@ -1,4 +1,4 @@
-WITH info_ventas AS(	
+WITH info_ventas AS (
     SELECT
         YEAR(OrderDate) AS Año,
         MONTH(OrderDate) AS Mes,
@@ -24,9 +24,9 @@ SELECT
     VentasMesAnterior,
     VentasActuales - VentasMesAnterior AS Diferencia,
     CAST(
-        (VentasActuales - VentasMesAnterior) * 100.0
+        (VentasActuales - VentasMesAnterior)
         / NULLIF(VentasMesAnterior, 0)
-        AS DECIMAL(10,2)
-    ) AS VariacionPorcentual
+        AS DECIMAL(10,4)
+    ) AS VariacionMensual
 FROM ventas_con_lag
 ORDER BY Año, Mes;
